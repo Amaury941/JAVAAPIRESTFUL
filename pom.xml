@@ -20,9 +20,9 @@
 
   <dependencies>
 
-  <dependency>
+    <dependency>
       <groupId>org.flywaydb</groupId>
-      <artifactId>flyway-core</artifactId>
+      <artifactId>flyway-database-postgresql</artifactId>
       <version>12.10.0</version>
       <scope>compile</scope>
   </dependency>
@@ -96,6 +96,22 @@
             <groupId>org.flywaydb</groupId>
             <artifactId>flyway-maven-plugin</artifactId>
             <version>12.10.0</version>
+            
+            <dependencies>
+                <dependency>
+                    <groupId>org.flywaydb</groupId>
+                    <artifactId>flyway-database-postgresql</artifactId>
+                    <version>10.20.1</version> <!-- Deve ser a mesma versão do plugin -->
+                </dependency>
+
+            <dependency>
+                <groupId>org.postgresql</groupId>
+                <artifactId>postgresql</artifactId>
+                <version>42.7.3</version> <!-- Versão estável do driver -->
+            </dependency>
+
+            </dependencies>
+
         </plugin>
 
 
