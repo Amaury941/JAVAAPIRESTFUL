@@ -1,5 +1,4 @@
-# my database credentials
-credentials.conf
+
 # Compiled class file
 *.class
 
@@ -22,6 +21,6 @@ credentials.conf
 *.rar
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+hs_err_pid*s'""
 replay_pid*
 credentials.conf
