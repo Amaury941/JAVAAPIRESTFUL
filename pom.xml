@@ -63,6 +63,11 @@
     <artifactId>spring-boot-starter-validation</artifactId>
 </dependency>
 
+  <dependency> <!-- org.springframework.security vem daqui -->
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-security</artifactId>
+</dependency>
+
   <dependency> <!-- para usar DB_user & DB_password em application.properties -->
     <groupId>me.paulschwarz</groupId>
     <artifactId>spring-dotenv</artifactId>
