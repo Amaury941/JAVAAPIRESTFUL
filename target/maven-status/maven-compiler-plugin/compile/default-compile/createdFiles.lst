@@ -1,5 +1,6 @@
-com/example/demo/DemoApplication.class
-com/example/demo/repository/UserRepository.class
-com/example/App.class
-com/example/demo/controller/UserController.class
-com/example/demo/model/User.class
+com/example/demo/user/UserController.class
+com/example/demo/App.class
+com/example/demo/user/dto/UserResponseDTO.class
+com/example/demo/user/User.class
+com/example/demo/user/UserRepository.class
+com/example/demo/user/dto/RegisterRequestDTO.class

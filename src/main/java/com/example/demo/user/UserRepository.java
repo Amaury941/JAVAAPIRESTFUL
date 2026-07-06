@@ -1,10 +1,10 @@
-package com.example.demo.repository;
+package com.example.demo.user;
 
 import java.util.UUID;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import com.example.demo.model.User;
 
 public interface UserRepository extends JpaRepository<User, UUID> {
+    boolean existsByEmail(String email);
     User findByEmail(String email);
 }
