@@ -1,4 +1,5 @@
 /home/amaury/Documentos/demo/src/main/java/com/example/demo/App.java
+/home/amaury/Documentos/demo/src/main/java/com/example/demo/config/SecurityConfig.java
 /home/amaury/Documentos/demo/src/main/java/com/example/demo/user/User.java
 /home/amaury/Documentos/demo/src/main/java/com/example/demo/user/UserController.java
 /home/amaury/Documentos/demo/src/main/java/com/example/demo/user/UserRepository.java

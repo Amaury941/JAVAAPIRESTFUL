@@ -1,3 +1,4 @@
+com/example/demo/config/SecurityConfig.class
 com/example/demo/user/UserController.class
 com/example/demo/App.class
 com/example/demo/user/dto/UserResponseDTO.class
