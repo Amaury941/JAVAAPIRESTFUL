@@ -1,5 +1,6 @@
 package com.example.demo.user;
 
+import com.example.demo.exception.EmailAlreadyExistsException;
 import com.example.demo.user.dto.RegisterRequestDTO;
 import com.example.demo.user.dto.UserResponseDTO;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -13,7 +14,7 @@ public class UserService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
 
-    public UserResponseDTO register(RegisterRequestDTO dto) throws EmailAlreadyExistsException {
+    public UserResponseDTO register(RegisterRequestDTO dto) {
         if (userRepository.existsByEmail(dto.email())) {
             throw new EmailAlreadyExistsException("Email já cadastrado");
         }
