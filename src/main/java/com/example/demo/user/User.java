@@ -1,6 +1,8 @@
 package com.example.demo.user;
 
 import java.util.UUID;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import jakarta.persistence.Id;
@@ -26,6 +28,7 @@ public class User {
 
     private String email;
     
+    @Column(name = "password_hash")
     private String password;
 
     @Enumerated(EnumType.STRING)

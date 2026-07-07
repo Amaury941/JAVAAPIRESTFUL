@@ -1,5 +1,8 @@
 package com.example.demo.exception;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -11,6 +14,8 @@ import java.util.List;
 
 @RestControllerAdvice
 public class GeneralExceptionHandler {
+
+        private static final Logger logger = LoggerFactory.getLogger(GeneralExceptionHandler.class); // logger
 
     // Dispara quando @Valid falha (campos inválidos no DTO)
     @ExceptionHandler(MethodArgumentNotValidException.class)
@@ -32,7 +37,7 @@ public class GeneralExceptionHandler {
     }
 
     // Dispara quando o email já existe no cadastro
-    @GeneralExceptionHandler(EmailAlreadyExistsException.class)
+    @ExceptionHandler(EmailAlreadyExistsException.class)
     public ResponseEntity<ErrorResponseDTO> handleEmailAlreadyExists(EmailAlreadyExistsException ex) {
         ErrorResponseDTO error = new ErrorResponseDTO(
             HttpStatus.CONFLICT.value(),
@@ -44,8 +49,10 @@ public class GeneralExceptionHandler {
     }
 
     // Fallback: qualquer outra exceção não tratada
-    @GeneralExceptionHandler(Exception.class)
+    @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResponseDTO> handleGenericException(Exception ex) {
+        logger.error("erro inesperado: ",ex); // logger
+
         ErrorResponseDTO error = new ErrorResponseDTO(
             HttpStatus.INTERNAL_SERVER_ERROR.value(),
             "Internal Server Error",

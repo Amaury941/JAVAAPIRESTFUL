@@ -1,7 +1,12 @@
 /home/amaury/Documentos/demo/src/main/java/com/example/demo/App.java
 /home/amaury/Documentos/demo/src/main/java/com/example/demo/config/SecurityConfig.java
+/home/amaury/Documentos/demo/src/main/java/com/example/demo/exception/EmailAlreadyExistsException.java
+/home/amaury/Documentos/demo/src/main/java/com/example/demo/exception/ErrorResponseDTO.java
+/home/amaury/Documentos/demo/src/main/java/com/example/demo/exception/GeneralExceptionHandler.java
+/home/amaury/Documentos/demo/src/main/java/com/example/demo/user/Role.java
 /home/amaury/Documentos/demo/src/main/java/com/example/demo/user/User.java
 /home/amaury/Documentos/demo/src/main/java/com/example/demo/user/UserController.java
 /home/amaury/Documentos/demo/src/main/java/com/example/demo/user/UserRepository.java
+/home/amaury/Documentos/demo/src/main/java/com/example/demo/user/UserService.java
 /home/amaury/Documentos/demo/src/main/java/com/example/demo/user/dto/RegisterRequestDTO.java
 /home/amaury/Documentos/demo/src/main/java/com/example/demo/user/dto/UserResponseDTO.java
