@@ -5,8 +5,8 @@ package com.example.demo.exception;
  */
 public class EmailAlreadyExistsException extends RuntimeException{
 
-    public EmailAlreadyExistsException(String string) {
-        super(string);
+    public EmailAlreadyExistsException(String message) {
+        super(message);
     }
 
 }

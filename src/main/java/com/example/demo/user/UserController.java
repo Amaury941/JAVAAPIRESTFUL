@@ -23,11 +23,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 public class UserController {
     private final UserService userService;
-    
     private final UserRepository repository;
 
-    public UserController(UserRepository repository) {
-        this.userService = null;
+    public UserController(UserRepository repository, UserService userService) {
+        this.userService = userService;
         this.repository = repository;
     }
     

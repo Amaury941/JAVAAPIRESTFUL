@@ -3,6 +3,9 @@ package com.example.demo.user;
 import com.example.demo.exception.EmailAlreadyExistsException;
 import com.example.demo.user.dto.RegisterRequestDTO;
 import com.example.demo.user.dto.UserResponseDTO;
+
+import java.util.UUID;
+
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
@@ -20,9 +23,10 @@ public class UserService {
         }
 
         User user = new User();
+        user.setId(UUID.randomUUID());
         user.setEmail(dto.email());
         user.setPassword(passwordEncoder.encode(dto.password()));
-        user.setRole(Role.USER); // role padrão, ninguém se autopromove a ADMIN aqui
+        user.setRole(Role.VIEWER); // role padrão, ninguém se autopromove a ADMIN aqui
 
         User saved = userRepository.save(user);
 
