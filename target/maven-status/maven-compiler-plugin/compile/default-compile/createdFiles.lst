@@ -1,5 +1,4 @@
 com/example/demo/exception/EmailAlreadyExistsException.class
-com/example/demo/user/JwtService.class
 com/example/demo/user/dto/UserResponseDTO.class
 com/example/demo/user/User.class
 com/example/demo/user/UserService.class
