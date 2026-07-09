@@ -15,7 +15,7 @@ public class JwtService {
         "troque-essa-chave-por-uma-bem-grande-e-secreta-1234567890".getBytes()
     );
 
-    private final long expirationMs = 3600000; // 1 hora
+    private final long expirationMs = 900000; // 15 minutes
 
     public String generateToken(String email) {
         return Jwts.builder()
