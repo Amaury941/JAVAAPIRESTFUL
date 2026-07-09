@@ -61,4 +61,15 @@ public class GeneralExceptionHandler {
 
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(error);
     }
+    
+    // invalid credentials when loggin in
+    @ExceptionHandler(InvalidCredentialsException.class)
+    public ResponseEntity<ErrorResponseDTO> handleInvalidCredentials(InvalidCredentialsException ex) {
+    ErrorResponseDTO error = new ErrorResponseDTO(
+        HttpStatus.UNAUTHORIZED.value(),
+        "Unauthorized",
+        ex.getMessage()
+    );
+    return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(error);
+}
 }

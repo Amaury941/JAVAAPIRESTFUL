@@ -6,6 +6,8 @@ import java.util.UUID;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.user.dto.LoginRequestDTO;
+import com.example.demo.user.dto.LoginResponseDTO;
 import com.example.demo.user.dto.RegisterRequestDTO;
 import com.example.demo.user.dto.UserResponseDTO;
 
@@ -36,6 +38,11 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
+    @PostMapping("/login")
+    public ResponseEntity<LoginResponseDTO> login(@Valid @RequestBody LoginRequestDTO dto) {
+        LoginResponseDTO response = userService.login(dto);
+        return ResponseEntity.ok(response);
+    }
 
     @GetMapping
     public List<UserResponseDTO> listAll() {
@@ -48,8 +55,5 @@ public class UserController {
     @GetMapping("/{id}")
     public User findById(@PathVariable("id") UUID id) {
         return repository.findById(id).orElse(null);
-    }
-
-    // TODO: tratar de erro da página
-    
+    }    
 }
