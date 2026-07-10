@@ -15,6 +15,10 @@ import jakarta.validation.Valid;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -45,6 +49,7 @@ public class UserController {
     }
 
     @GetMapping
+    @PreAuthorize("hasRole('ADMIN')") //
     public List<UserResponseDTO> listAll() {
         return repository.findAll()
             .stream()
@@ -53,7 +58,19 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public User findById(@PathVariable("id") UUID id) {
-        return repository.findById(id).orElse(null);
-    }    
+    public UserResponseDTO findById(@PathVariable("id") UUID id) {
+        User target = repository.findById(id).orElseThrow(() -> new UsernameNotFoundException("email não encontrado"));
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String requesterEmail = auth.getName();
+
+        boolean isAdmin = auth.getAuthorities().stream()
+        .anyMatch(a->a.getAuthority().equals("ROLE_ADMIN"));
+
+        boolean isOwner = target.getEmail().equals(requesterEmail);
+
+        if (!isAdmin && !isOwner) {
+            throw new org.springframework.security.authorization.AuthorizationDeniedException("No hay permisso para acessar perdón.");
+        }
+        return new UserResponseDTO(target.getId(), target.getEmail(), target.getRole().name());
+    }
 }

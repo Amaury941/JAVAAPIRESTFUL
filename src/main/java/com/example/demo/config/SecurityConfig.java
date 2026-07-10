@@ -2,8 +2,10 @@ package com.example.demo.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -18,6 +20,7 @@ import lombok.RequiredArgsConstructor;
 
 @Configuration
 @EnableWebSecurity
+@EnableMethodSecurity //
 @RequiredArgsConstructor
 public class SecurityConfig {
 
@@ -40,7 +43,11 @@ public class SecurityConfig {
             .sessionManagement(session->session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/admin/**").hasAnyRole("ADMIN")
+                
+                .requestMatchers(HttpMethod.DELETE,"/users/**").hasRole("ADMIN")
+                .requestMatchers(HttpMethod.GET,"/users/**").permitAll()
+
+                .requestMatchers("/admin/**").hasRole("ADMIN")
                 .requestMatchers("/edit/**").hasAnyRole("ADMIN","EDITOR")
                 .requestMatchers("/users/register", "/users/login").permitAll()
                 .anyRequest().authenticated()

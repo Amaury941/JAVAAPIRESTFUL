@@ -4,12 +4,10 @@ com/example/demo/user/User.class
 com/example/demo/user/UserService.class
 com/example/demo/exception/InvalidCredentialsException.class
 com/example/demo/config/SecurityConfig.class
-com/example/demo/user/UserController.class
 com/example/demo/App.class
 com/example/demo/exception/ErrorResponseDTO.class
 com/example/demo/user/dto/LoginResponseDTO.class
 com/example/demo/user/Role.class
 com/example/demo/user/UserRepository.class
-com/example/demo/exception/GeneralExceptionHandler.class
 com/example/demo/user/dto/LoginRequestDTO.class
 com/example/demo/user/dto/RegisterRequestDTO.class
