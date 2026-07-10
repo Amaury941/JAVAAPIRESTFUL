@@ -12,4 +12,4 @@ curl -i http://localhost:8080/users \
 # To register new user
 curl -X POST http://localhost:8080/users/register \
   -H "Content-Type: application/json" \
-  -d '{"email":"teste@teste.com","password":"12345678"}'
+  -d '{"email":"EMAIL","password":"PASSWORD"}'
