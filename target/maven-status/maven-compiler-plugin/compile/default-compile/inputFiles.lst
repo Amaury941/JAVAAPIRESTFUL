@@ -1,4 +1,5 @@
 /home/amaury/Documentos/demo/src/main/java/com/example/demo/App.java
+/home/amaury/Documentos/demo/src/main/java/com/example/demo/config/AdminSeeder.java
 /home/amaury/Documentos/demo/src/main/java/com/example/demo/config/SecurityConfig.java
 /home/amaury/Documentos/demo/src/main/java/com/example/demo/exception/EmailAlreadyExistsException.java
 /home/amaury/Documentos/demo/src/main/java/com/example/demo/exception/ErrorResponseDTO.java

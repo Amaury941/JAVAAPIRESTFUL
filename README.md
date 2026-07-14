@@ -3,7 +3,7 @@
 # Login
 curl -X POST http://localhost:8080/users/login \
   -H "Content-Type: application/json" \
-  -d '{"email":"EMAIL","password":"PASSWORD"}'
+  -d '{"email":"admin@demo.com","password":"admin123"}'
 
 # To Access protected root
 curl -i http://localhost:8080/users \
@@ -13,3 +13,7 @@ curl -i http://localhost:8080/users \
 curl -X POST http://localhost:8080/users/register \
   -H "Content-Type: application/json" \
   -d '{"email":"EMAIL","password":"PASSWORD"}'
+
+
+
+
