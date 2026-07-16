@@ -5,6 +5,7 @@
 /home/amaury/Documentos/demo/src/main/java/com/example/demo/exception/ErrorResponseDTO.java
 /home/amaury/Documentos/demo/src/main/java/com/example/demo/exception/GeneralExceptionHandler.java
 /home/amaury/Documentos/demo/src/main/java/com/example/demo/exception/InvalidCredentialsException.java
+/home/amaury/Documentos/demo/src/main/java/com/example/demo/exception/UserNotFoundException.java
 /home/amaury/Documentos/demo/src/main/java/com/example/demo/security/JwtAuthFilter.java
 /home/amaury/Documentos/demo/src/main/java/com/example/demo/security/JwtService.java
 /home/amaury/Documentos/demo/src/main/java/com/example/demo/user/CustomUserDetailsService.java
