@@ -1,19 +1,20 @@
 # JAVAAPIRESTFUL
 
 # Login
-curl -X POST http://localhost:8080/users/login \
-  -H "Content-Type: application/json" \
-  -d '{"email":"admin@demo.com","password":"admin123"}'
+``` bash
+curl -X POST http://localhost:8080/users/login -H "Content-Type: application/json" -d '{"email":"admin@demo.com","password":"admin123"}'
 
+```
 # To Access protected root
-curl -i http://localhost:8080/users \
-  -H "Authorization: Bearer COLE_O_TOKEN_AQUI"
+``` bash
+curl -i http://localhost:8080/users -H "Authorization: Bearer COLE_O_TOKEN_AQUI"
 
+```
 # To register new user
-curl -X POST http://localhost:8080/users/register \
-  -H "Content-Type: application/json" \
-  -d '{"email":"EMAIL","password":"PASSWORD"}'
 
+``` bash
+curl -X POST http://localhost:8080/users/register -H "Content-Type: application/json" -d '{"email":"EMAIL","password":"PASSWORD"}'
+```
 
 
 
